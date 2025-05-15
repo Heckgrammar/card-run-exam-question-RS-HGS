@@ -1,3 +1,4 @@
+﻿using System;
 ﻿namespace ValidCardRunTask
 {
     internal class Program
@@ -18,7 +19,30 @@
             int[] cards = dealCards();
             bool gameWon = false;
             // add your code here
-
+            int run = 0;
+            for (int i = 0; i < 100; i++)
+            {
+                if (i != 0)
+                {
+                    if (cards[i] == cards [i-1] + 1)
+                    {
+                        Console.WriteLine(cards[i-1]);
+                        run++;
+                    }
+                    else 
+                    {
+                        run = 0;
+                    }
+                    
+                }
+                if (run >= 5)
+                {
+                    gameWon = true;
+                    break;
+                    
+                }
+            }
+            
 
             // end of your code
             Console.WriteLine(gameWon);
